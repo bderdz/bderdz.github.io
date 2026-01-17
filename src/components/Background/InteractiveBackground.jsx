@@ -135,6 +135,13 @@ export const InteractiveBackground = () => {
             }
         };
 
+        const handleTouchStart = (e) => {
+            if (e.touches.length > 0) {
+                mouse.x = e.touches[0].clientX;
+                mouse.y = e.touches[0].clientY;
+            }
+        };
+
         const handleMouseLeave = () => {
             mouse.x = undefined;
             mouse.y = undefined;
@@ -143,6 +150,7 @@ export const InteractiveBackground = () => {
         window.addEventListener('resize', handleResize);
         window.addEventListener('mousemove', handleMouseMove);
         window.addEventListener('touchmove', handleTouchMove);
+        window.addEventListener('touchstart', handleTouchStart);
         window.addEventListener('touchend', handleMouseLeave);
         window.addEventListener('mouseleave', handleMouseLeave);
 
@@ -150,6 +158,7 @@ export const InteractiveBackground = () => {
             window.removeEventListener('resize', handleResize);
             window.removeEventListener('mousemove', handleMouseMove);
             window.removeEventListener('touchmove', handleTouchMove);
+            window.removeEventListener('touchstart', handleTouchStart);
             window.removeEventListener('touchend', handleMouseLeave);
             window.removeEventListener('mouseleave', handleMouseLeave);
         };
