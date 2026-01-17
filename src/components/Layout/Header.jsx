@@ -48,6 +48,7 @@ export const Header = () => {
             borderBottom: scrolled ? '1px solid var(--card-border)' : '1px solid transparent',
         }}>
             <motion.div
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 whileHover={{
                     x: [0, -2, 2, -1, 1, 0],
                     color: '#3b82f6', // Shift to accent color on hover

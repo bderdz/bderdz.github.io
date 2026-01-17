@@ -1,24 +1,27 @@
 import { motion } from 'framer-motion';
 import { FaPython, FaReact, FaDocker, FaGitAlt } from 'react-icons/fa';
-import { SiTensorflow, SiPytorch, SiOpencv, SiFastapi, SiPostgresql, SiScikitlearn, SiPandas, SiNumpy } from 'react-icons/si';
+import { SiTensorflow, SiPytorch, SiFastapi, SiPostgresql, SiScikitlearn, SiPandas, SiNumpy, SiGooglecloud, SiJupyter, SiN8N, SiLangchain, SiGooglegemini, SiHuggingface } from 'react-icons/si';
 
 const skills = [
     {
         category: 'AI & ML', items: [
-            { name: 'PyTorch', icon: <SiPytorch /> },
-            { name: 'TensorFlow', icon: <SiTensorflow /> },
-            { name: 'Scikit-Learn', icon: <SiScikitlearn /> },
-            { name: 'OpenCV', icon: <SiOpencv /> },
             { name: 'Pandas', icon: <SiPandas /> },
             { name: 'NumPy', icon: <SiNumpy /> },
+            { name: 'LangChain', icon: <SiLangchain /> },
+            { name: 'Gemini API', icon: <SiGooglegemini /> },
+            { name: 'Hugging Face', icon: <SiHuggingface /> },
+            { name: 'Scikit-Learn', icon: <SiScikitlearn /> },
+            { name: 'PyTorch', icon: <SiPytorch /> },
+            { name: 'TensorFlow', icon: <SiTensorflow /> },
+            { name: 'Jupyter', icon: <SiJupyter /> },
         ]
     },
     {
         category: 'Development', items: [
             { name: 'Python', icon: <FaPython /> },
             { name: 'FastAPI', icon: <SiFastapi /> },
-            { name: 'React', icon: <FaReact /> },
-            { name: 'PostgreSQL', icon: <SiPostgresql /> },
+            { name: 'Google Cloud', icon: <SiGooglecloud /> },
+            { name: 'n8n', icon: <SiN8N /> },
             { name: 'Docker', icon: <FaDocker /> },
             { name: 'Git', icon: <FaGitAlt /> },
         ]
@@ -44,7 +47,7 @@ export const Skills = () => {
                     {skills.map((grp, i) => (
                         <div key={i}>
                             <h3 style={{ fontSize: '1.2rem', color: 'var(--accent-secondary)', marginBottom: '1.5rem' }}>{grp.category}</h3>
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: '1rem' }}>
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: '1rem' }}>
                                 {grp.items.map((skill) => (
                                     <motion.div
                                         key={skill.name}

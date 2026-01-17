@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import profileImg from '../../assets/profile.jpg';
 
 export const About = () => {
     return (
@@ -73,8 +74,17 @@ export const About = () => {
                                 overflow: 'hidden',
                                 border: '1px solid rgba(0,0,0,0.1)'
                             }}>
-                                {/* Placeholder for image */}
-                                <span style={{ fontSize: '4rem', opacity: 0.2, color: 'var(--text-primary)', fontWeight: 'bold' }}>IMG</span>
+                                <img
+                                    src={profileImg}
+                                    alt="Bogdan"
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        objectFit: 'cover',
+                                        transform: 'scale(2.5)',
+                                        transformOrigin: '35% 50%'
+                                    }}
+                                />
                             </div>
                         </div>
                     </div>

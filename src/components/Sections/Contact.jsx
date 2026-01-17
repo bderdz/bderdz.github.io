@@ -2,24 +2,36 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export const Contact = () => {
-    const [formState, setFormState] = useState({ name: '', email: '', message: '' });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isSent, setIsSent] = useState(false);
+    // idle, sending, success, error
+    const [status, setStatus] = useState("idle");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setIsSubmitting(true);
-        // Simulate sending
-        setTimeout(() => {
-            setIsSubmitting(false);
-            setIsSent(true);
-            setFormState({ name: '', email: '', message: '' });
-            setTimeout(() => setIsSent(false), 3000);
-        }, 1500);
-    };
+        setStatus("sending");
 
-    const handleChange = (e) => {
-        setFormState({ ...formState, [e.target.name]: e.target.value });
+        const form = e.target;
+        const data = new FormData(form);
+
+        try {
+            const res = await fetch("https://formspree.io/f/xaqqqzwo", {
+                method: "POST",
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (res.ok) {
+                setStatus("success");
+                form.reset();
+                // Reset success message after 5 seconds to allow sending another
+                setTimeout(() => setStatus("idle"), 5000);
+            } else {
+                setStatus("error");
+            }
+        } catch (error) {
+            setStatus("error");
+        }
     };
 
     const inputStyle = {
@@ -67,14 +79,15 @@ export const Contact = () => {
                     </div>
 
                     <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                        {/* Hidden Gotcha for Spam Protection */}
+                        <input type="text" name="_gotcha" style={{ display: "none" }} />
+
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem' }}>
                             <div>
                                 <label style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Name</label>
                                 <input
                                     type="text"
                                     name="name"
-                                    value={formState.name}
-                                    onChange={handleChange}
                                     required
                                     style={inputStyle}
                                     onFocus={(e) => e.target.style.borderColor = 'var(--accent-primary)'}
@@ -86,8 +99,6 @@ export const Contact = () => {
                                 <input
                                     type="email"
                                     name="email"
-                                    value={formState.email}
-                                    onChange={handleChange}
                                     required
                                     style={inputStyle}
                                     onFocus={(e) => e.target.style.borderColor = 'var(--accent-primary)'}
@@ -100,8 +111,6 @@ export const Contact = () => {
                             <textarea
                                 name="message"
                                 rows="5"
-                                value={formState.message}
-                                onChange={handleChange}
                                 required
                                 style={{ ...inputStyle, resize: 'vertical' }}
                                 onFocus={(e) => e.target.style.borderColor = 'var(--accent-primary)'}
@@ -111,24 +120,30 @@ export const Contact = () => {
 
                         <motion.button
                             type="submit"
-                            disabled={isSubmitting}
+                            disabled={status === "sending"}
                             whileHover={{ scale: 1.05, backgroundColor: 'rgba(59, 130, 246, 0.1)' }}
                             whileTap={{ scale: 0.95 }}
                             style={{
                                 padding: '1.25rem',
-                                backgroundColor: 'transparent',
-                                border: '1px solid var(--accent-primary)',
-                                color: 'var(--accent-primary)',
+                                backgroundColor: status === "success" ? '#10b981' : 'transparent', // Green if success
+                                border: status === "success" ? '1px solid #10b981' : '1px solid var(--accent-primary)',
+                                color: status === "success" ? '#ffffff' : 'var(--accent-primary)',
                                 borderRadius: '4px',
                                 fontSize: '1rem',
                                 fontWeight: '600',
-                                cursor: 'pointer',
+                                cursor: status === "sending" ? 'not-allowed' : 'pointer',
                                 marginTop: '1rem',
                                 transition: 'all 0.3s'
                             }}
                         >
-                            {isSubmitting ? 'Sending...' : isSent ? 'Message Sent!' : 'Send Message'}
+                            {status === "sending" ? "Wysyłanie..." : status === "success" ? "Wiadomość wysłana" : "Wyślij"}
                         </motion.button>
+
+                        {status === "error" && (
+                            <p style={{ color: '#ef4444', textAlign: 'center', marginTop: '1rem' }}>
+                                Błąd wysyłki. Spróbuj ponownie.
+                            </p>
+                        )}
                     </form>
                 </div>
             </motion.div>

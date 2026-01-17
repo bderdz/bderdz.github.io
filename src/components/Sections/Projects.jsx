@@ -2,52 +2,20 @@ import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaRobot, FaBrain, FaPalette, FaLaptopCode, FaImage } from 'react-icons/fa';
 
-const projects = [
-    {
-        id: 1,
-        title: 'Sentiment Analysis Bot',
-        subtitle: 'Real-time NLP Pipeline',
-        description: 'A comprehensive sentiment analysis solution for Twitter streams. It utilizes a fine-tuned BERT model served via FastAPI to process thousands of tweets per minute. The system includes a React dashboard for real-time visualization of sentiment trends and anomaly detection.',
-        tags: ['NLP', 'Python', 'Docker', 'FastAPI', 'React'],
-        links: { github: '#', external: '#' },
-        icon: <FaRobot size={24} />,
-        color: '#3b82f6',
-        hasImage: true
-    },
-    {
-        id: 2,
-        title: 'AI Image Generator',
-        subtitle: 'Stable Diffusion Web App',
-        description: 'An artistic tool built on top of Stable Diffusion. Users can generate, variation, and upscale images using natural language prompts. Features include a gallery of community creations and prompt engineering helpers.',
-        tags: ['GenAI', 'React', 'Node.js'],
-        links: { github: '#', external: '#' },
-        icon: <FaPalette size={24} />,
-        color: '#8b5cf6',
-        hasImage: true
-    },
-    {
-        id: 3,
-        title: 'Drone Pathing Sim',
-        subtitle: 'Reinforcement Learning',
-        description: 'A Unity-based simulation environment for training autonomous agents. Uses PyTorch and PPO (Proximal Policy Optimization) to teach drones how to navigate complex obstacle courses without collision.',
-        tags: ['RL', 'PyTorch', 'Unity', 'C#'],
-        links: { github: '#' },
-        icon: <FaBrain size={24} />,
-        color: '#10b981',
-        hasImage: false
-    },
-    {
-        id: 4,
-        title: 'Smart Portfolio',
-        subtitle: 'Modern Web Experience',
-        description: 'This portfolio website itself! Built with React, Vite, and Framer Motion. It features performant animations, interactive canvas backgrounds, and a responsive glassmorphism design system.',
-        tags: ['Web', 'React', 'Framer Motion'],
-        links: { github: '#' },
-        icon: <FaLaptopCode size={24} />,
-        color: '#f43f5e',
-        hasImage: true
-    }
-];
+import projectsData from '../../assets/projects.json';
+
+// Icon Mapping
+const iconMap = {
+    'FaRobot': <FaRobot size={24} />,
+    'FaPalette': <FaPalette size={24} />,
+    'FaBrain': <FaBrain size={24} />,
+    'FaLaptopCode': <FaLaptopCode size={24} />
+};
+
+const projects = projectsData.map(p => ({
+    ...p,
+    icon: iconMap[p.iconName] || <FaLaptopCode size={24} /> // Fallback icon
+}));
 
 const Card = ({ project, index, range, targetScale, progress, isLast }) => {
     const container = useRef(null);

@@ -105,10 +105,10 @@ export const Hero = () => {
                         Check out my work
                     </motion.a>
                     <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-                        <motion.a whileHover={{ y: -3, color: 'var(--accent-primary)' }} href="https://github.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s' }}>
+                        <motion.a whileHover={{ y: -3, color: 'var(--accent-primary)' }} href="https://github.com/bderdz" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s' }}>
                             <FaGithub size={24} />
                         </motion.a>
-                        <motion.a whileHover={{ y: -3, color: 'var(--accent-primary)' }} href="https://linkedin.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s' }}>
+                        <motion.a whileHover={{ y: -3, color: 'var(--accent-primary)' }} href="https://www.linkedin.com/in/bderdz/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s' }}>
                             <FaLinkedin size={24} />
                         </motion.a>
                     </div>
