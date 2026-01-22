@@ -64,7 +64,7 @@ export const Header = () => {
                     cursor: 'pointer'
                 }}
             >
-                BOGDAN<span style={{ color: 'var(--accent-primary)' }}>_</span>DEV
+                B<span style={{ color: 'var(--accent-primary)' }}>.</span>DERDZ
             </motion.div>
 
             {/* Desktop Nav */}

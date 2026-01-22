@@ -1,75 +1,58 @@
 [
     {
         "id": 1,
-        "title": "Sentiment Analysis Bot",
-        "subtitle": "Real-time NLP Pipeline",
-        "description": "A comprehensive sentiment analysis solution for Twitter streams. It utilizes a fine-tuned BERT model served via FastAPI to process thousands of tweets per minute. The system includes a React dashboard for real-time visualization of sentiment trends and anomaly detection.",
+        "title": "Medical Assistant",
+        "subtitle": "A Retrieval-Augmented Generation (RAG) based Medical Diagnosis Assistant",
+        "description": "Designed to provide medical diagnosis suggestions based on patient symptoms, age and gender using a combination of a local vector database (ChromaDB), a local reranking model, and reasoning LLM Gemini model via API.",
         "tags": [
-            "NLP",
             "Python",
-            "Docker",
+            "LangChain",
+            "Gemini API",
+            "ChromaDB",
             "FastAPI",
-            "React"
+            "Gradio",
+            "Docker"
         ],
         "links": {
-            "github": "#",
-            "external": "#"
+            "github": "https://github.com/bderdz/med_rag_assistant"
         },
         "iconName": "FaRobot",
         "color": "#3b82f6",
-        "hasImage": true
+        "hasImage": true,
+        "image": "/projects/med_assistant.jpg"
     },
     {
         "id": 2,
-        "title": "AI Image Generator",
-        "subtitle": "Stable Diffusion Web App",
-        "description": "An artistic tool built on top of Stable Diffusion. Users can generate, variation, and upscale images using natural language prompts. Features include a gallery of community creations and prompt engineering helpers.",
+        "title": "Pattern Classifier Neural Network",
+        "subtitle": "NumPy-only Custom Multilayer Perceptron (MLP)",
+        "description": "Built a neural network from scratch to classify 2x2 pixel patterns (solid, diagonal, horizontal, vertical). Implemented ReLU/Softmax activations, He Normal initialization, Cross-Entropy loss, and Early Stopping. Validated performance using Accuracy, Precision, and Confusion Matrix, featuring a custom visualization tool for predictions.",
         "tags": [
-            "GenAI",
-            "React",
-            "Node.js"
+            "Machine Learning",
+            "NumPy",
+            "Python"
         ],
         "links": {
-            "github": "#",
-            "external": "#"
+            "github": "https://github.com/bderdz/pattern_classifier_nn"
         },
         "iconName": "FaPalette",
         "color": "#8b5cf6",
-        "hasImage": true
-    },
-    {
-        "id": 3,
-        "title": "Drone Pathing Sim",
-        "subtitle": "Reinforcement Learning",
-        "description": "A Unity-based simulation environment for training autonomous agents. Uses PyTorch and PPO (Proximal Policy Optimization) to teach drones how to navigate complex obstacle courses without collision.",
-        "tags": [
-            "RL",
-            "PyTorch",
-            "Unity",
-            "C#"
-        ],
-        "links": {
-            "github": "#"
-        },
-        "iconName": "FaBrain",
-        "color": "#10b981",
         "hasImage": false
     },
     {
         "id": 4,
-        "title": "Smart Portfolio",
+        "title": "Portfolio Website",
         "subtitle": "Modern Web Experience",
-        "description": "This portfolio website itself! Built with React, Vite, and Framer Motion. It features performant animations, interactive canvas backgrounds, and a responsive glassmorphism design system.",
+        "description": "This portfolio website itself! Project was built with React, Vite, and Framer Motion using a “vibe coding” approach — a fast, exploratory workflow that allowed me to experiment with interactive animations, canvas backgrounds, and responsive glassmorphism design.",
         "tags": [
-            "Web",
             "React",
-            "Framer Motion"
+            "Framer Motion",
+            "Google Antigravity"
         ],
         "links": {
-            "github": "#"
+            "github": "https://github.com/bderdz/bderdz.github.io"
         },
         "iconName": "FaLaptopCode",
         "color": "#f43f5e",
-        "hasImage": true
+        "hasImage": false
     }
 ]

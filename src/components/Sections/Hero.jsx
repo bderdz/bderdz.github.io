@@ -59,7 +59,7 @@ export const Hero = () => {
                     color: 'var(--text-primary)',
                     letterSpacing: '-0.02em'
                 }}>
-                    Bogdan Dev.
+                    Bogdan Derdziak
                 </motion.h1>
 
                 <motion.h2 variants={itemVariants} style={{
@@ -80,8 +80,8 @@ export const Hero = () => {
                     lineHeight: 1.7,
                     marginBottom: '3rem'
                 }}>
-                    I'm a Junior AI Engineer specializing in building accessible artificial intelligence solutions.
-                    Focusing on <span style={{ color: 'var(--accent-primary)' }}>Machine Learning</span>, <span style={{ color: 'var(--accent-secondary)' }}>NLP</span>, and modern web technologies.
+                    I'm a Junior AI Engineer specializing in building accessible AI solutions.
+                    Focusing on <span style={{ color: 'var(--accent-primary)' }}>Machine Learning</span>, <span style={{ color: 'var(--accent-secondary)' }}>NLP</span>, and LLMs.
                 </motion.p>
 
                 <motion.div variants={itemVariants} style={{ display: 'flex', gap: '1.5rem', marginBottom: '4rem' }}>

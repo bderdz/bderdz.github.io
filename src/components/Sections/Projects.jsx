@@ -97,7 +97,7 @@ const Card = ({ project, index, range, targetScale, progress, isLast }) => {
                 `}</style>
 
                 {/* Left: Content */}
-                <div className="split-content" style={{ width: '45%', padding: '3rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', zIndex: 2 }}>
+                <div className="split-content" style={{ width: '60%', padding: '3rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', zIndex: 2 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
                         <div style={{
                             color: project.color,
@@ -152,11 +152,22 @@ const Card = ({ project, index, range, targetScale, progress, isLast }) => {
                 </div>
 
                 {/* Right: Image */}
-                <div className="split-image" style={{ width: '55%', position: 'relative', overflow: 'hidden', background: '#f1f5f9' }}>
+                <div className="split-image" style={{ width: '40%', position: 'relative', overflow: 'hidden', background: '#f1f5f9' }}>
                     <motion.div
                         style={{ width: '100%', height: '100%', scale: imageScale }}
                     >
-                        {project.hasImage ? (
+                        {project.image ? (
+                            <img
+                                src={project.image}
+                                alt={project.title}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'contain',
+                                    objectPosition: 'center'
+                                }}
+                            />
+                        ) : project.hasImage ? (
                             <div style={{
                                 width: '100%',
                                 height: '100%',

@@ -7,7 +7,7 @@ export const Footer = () => {
             fontSize: '0.9rem',
             borderTop: '1px solid var(--card-border)'
         }}>
-            <p>&copy; {new Date().getFullYear()} Junior AI Engineer. Built with React & AI.</p>
+            <p>&copy; {new Date().getFullYear()} Bogdan Derdziak. Built by Human & AI</p>
         </footer>
     );
 };
