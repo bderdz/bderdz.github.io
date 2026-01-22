@@ -80,8 +80,10 @@ export const Hero = () => {
                     lineHeight: 1.7,
                     marginBottom: '3rem'
                 }}>
-                    I'm a Junior AI Engineer specializing in building accessible AI solutions.
-                    Focusing on <span style={{ color: 'var(--accent-primary)' }}>Machine Learning</span>, <span style={{ color: 'var(--accent-secondary)' }}>NLP</span>, and LLMs.
+                    I'm a Junior AI Engineer specializing in building accessible AI solutions, with a focus on
+                    <span style={{ color: 'var(--accent-primary)', fontWeight: '500' }}> Machine Learning</span>,
+                    <span style={{ color: 'var(--accent-secondary)', fontWeight: '500' }}> Deep Learning</span>, and
+                    <span style={{ color: '#0d9488', fontWeight: '500' }}> Large Language Models (LLMs)</span>.
                 </motion.p>
 
                 <motion.div variants={itemVariants} style={{ display: 'flex', gap: '1.5rem', marginBottom: '4rem' }}>

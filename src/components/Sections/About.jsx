@@ -24,19 +24,16 @@ export const About = () => {
                     `}</style>
                     <div style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7 }}>
                         <p style={{ marginBottom: '1rem' }}>
-                            Hello! My name is Bogdan and I enjoy creating things that live on the internet and in the cloud.
-                            My interest in AI started back in college when I decided to try training a simple neural network to play a game —
-                            turns out hacking together custom models taught me a lot about both data and software engineering.
+                            I’m a Junior AI Engineer and a third-year Computer Science student at Maria Curie-Skłodowska University (UMCS), passionate about building accessible and practical AI-powered solutions.
                         </p>
                         <p style={{ marginBottom: '1rem' }}>
-                            Fast-forward to today, I've had the privilege of working on various projects involving
-                            <span style={{ color: 'var(--accent-primary)' }}> Natural Language Processing</span>,
-                            <span style={{ color: 'var(--accent-primary)' }}> Computer Vision</span>, and
-                            <span style={{ color: 'var(--accent-primary)' }}> Generative AI</span>.
+                            My main focus is on <span style={{ color: 'var(--accent-primary)', fontWeight: '500' }}>Machine Learning</span>, <span style={{ color: 'var(--accent-secondary)', fontWeight: '500' }}>Deep Learning</span>, and <span style={{ color: '#0d9488', fontWeight: '500' }}>Large Language Models (LLMs)</span>. I enjoy turning ideas into working systems, from intelligent chatbots to RAG-based applications that combine language models with real data.
+                        </p>
+                        <p style={{ marginBottom: '1rem' }}>
+                            I work primarily in Python and have hands-on experience with tools such as LangChain, Gemini API, and Hugging Face models, as well as automating AI workflows and integrations using n8n.
                         </p>
                         <p>
-                            I am constantly learning and keeping up with the latest advancements in the field to build
-                            smarter and more efficient systems.
+                            I care a lot about clean architecture, maintainable code, and practical problem-solving. I’m constantly learning, experimenting with new approaches, and keeping up with the latest developments in AI to build systems that are not only intelligent, but also reliable and easy to extend.
                         </p>
                     </div>
 
