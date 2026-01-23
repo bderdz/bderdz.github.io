@@ -23,6 +23,27 @@
     },
     {
         "id": 2,
+        "title": "AI-Powered Lead Automation (n8n)",
+        "subtitle": "Flexible AI-powered lead automation for small businesses.",
+        "description": "This project automates lead handling from forms and APIs that are usually processed manually and with delays. An n8n workflow uses AI (e.g. Google Gemini) to classify incoming leads and generate personalized response emails in real time. Lead data is stored in Google Sheets, while the team receives instant Telegram notifications. The solution reduces manual work, improves response time, and enhances customer experience.",
+        "tags": [
+            "n8n",
+            "Google Forms",
+            "Google Sheets",
+            "Gmail API",
+            "AI Agent",
+            "Telegram Bot",
+            "Automation"
+        ],
+        "links": {
+            "case_study": "/projects/case_study_lead.pdf"
+        },
+        "iconName": "FaHistory",
+        "color": "#8b5cf6",
+        "hasImage": false
+    },
+    {
+        "id": 3,
         "title": "Pattern Classifier Neural Network",
         "subtitle": "NumPy-only Custom Multilayer Perceptron (MLP)",
         "description": "Built a neural network from scratch to classify 2x2 pixel patterns (solid, diagonal, horizontal, vertical). Implemented ReLU/Softmax activations, He Normal initialization, Cross-Entropy loss, and Early Stopping. Validated performance using Accuracy, Precision, and Confusion Matrix, featuring a custom visualization tool for predictions.",
@@ -34,8 +55,8 @@
         "links": {
             "github": "https://github.com/bderdz/pattern_classifier_nn"
         },
-        "iconName": "FaPalette",
-        "color": "#8b5cf6",
+        "iconName": "FaNetworkWired",
+        "color": "#0d9488",
         "hasImage": false
     },
     {

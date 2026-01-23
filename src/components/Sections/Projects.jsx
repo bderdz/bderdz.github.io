@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaRobot, FaBrain, FaPalette, FaLaptopCode, FaImage } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaRobot, FaBrain, FaPalette, FaLaptopCode, FaImage, FaNetworkWired, FaHistory, FaFilePdf } from 'react-icons/fa';
 
 import projectsData from '../../assets/projects.json';
 
@@ -9,7 +9,9 @@ const iconMap = {
     'FaRobot': <FaRobot size={24} />,
     'FaPalette': <FaPalette size={24} />,
     'FaBrain': <FaBrain size={24} />,
-    'FaLaptopCode': <FaLaptopCode size={24} />
+    'FaLaptopCode': <FaLaptopCode size={24} />,
+    'FaNetworkWired': <FaNetworkWired size={24} />,
+    'FaHistory': <FaHistory size={24} />
 };
 
 const projects = projectsData.map(p => ({
@@ -139,13 +141,18 @@ const Card = ({ project, index, range, targetScale, progress, isLast }) => {
 
                     <div style={{ display: 'flex', gap: '1rem' }}>
                         {project.links.github && (
-                            <a href={project.links.github} className="button" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 'bold', color: 'var(--text-primary)' }}>
+                            <a href={project.links.github} className="button" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 'bold', fontSize: '1.15rem', color: 'var(--text-primary)' }}>
                                 <FaGithub /> Code
                             </a>
                         )}
                         {project.links.external && (
-                            <a href={project.links.external} className="button" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 'bold', color: project.color }}>
+                            <a href={project.links.external} className="button" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 'bold', fontSize: '1.15rem', color: 'var(--text-primary)' }}>
                                 <FaExternalLinkAlt /> Live Demo
+                            </a>
+                        )}
+                        {project.links.case_study && (
+                            <a href={project.links.case_study} target="_blank" rel="noopener noreferrer" className="button" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 'bold', fontSize: '1.15rem', color: 'var(--text-primary)' }}>
+                                <FaFilePdf /> Case Study
                             </a>
                         )}
                     </div>
