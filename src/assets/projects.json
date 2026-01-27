@@ -17,9 +17,7 @@
             "github": "https://github.com/bderdz/med_rag_assistant"
         },
         "iconName": "FaRobot",
-        "color": "#3b82f6",
-        "hasImage": true,
-        "image": "/projects/med_assistant.jpg"
+        "color": "#3b82f6"
     },
     {
         "id": 2,
@@ -39,8 +37,7 @@
             "case_study": "/projects/case_study_lead.pdf"
         },
         "iconName": "FaHistory",
-        "color": "#8b5cf6",
-        "hasImage": false
+        "color": "#8b5cf6"
     },
     {
         "id": 3,
@@ -56,8 +53,7 @@
             "github": "https://github.com/bderdz/pattern_classifier_nn"
         },
         "iconName": "FaNetworkWired",
-        "color": "#0d9488",
-        "hasImage": false
+        "color": "#0d9488"
     },
     {
         "id": 4,
@@ -73,7 +69,6 @@
             "github": "https://github.com/bderdz/bderdz.github.io"
         },
         "iconName": "FaLaptopCode",
-        "color": "#f43f5e",
-        "hasImage": false
+        "color": "#f43f5e"
     }
 ]

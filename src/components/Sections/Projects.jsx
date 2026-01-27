@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaRobot, FaBrain, FaPalette, FaLaptopCode, FaImage, FaNetworkWired, FaHistory, FaFilePdf } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaRobot, FaBrain, FaPalette, FaLaptopCode, FaNetworkWired, FaHistory, FaFilePdf } from 'react-icons/fa';
 
 import projectsData from '../../assets/projects.json';
 
@@ -99,7 +99,7 @@ const Card = ({ project, index, range, targetScale, progress, isLast }) => {
                 `}</style>
 
                 {/* Left: Content */}
-                <div className="split-content" style={{ width: '60%', padding: '3rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', zIndex: 2 }}>
+                <div className="split-content" style={{ width: '80%', padding: '3rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', zIndex: 2 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
                         <div style={{
                             color: project.color,
@@ -158,49 +158,21 @@ const Card = ({ project, index, range, targetScale, progress, isLast }) => {
                     </div>
                 </div>
 
-                {/* Right: Image */}
-                <div className="split-image" style={{ width: '40%', position: 'relative', overflow: 'hidden', background: '#f1f5f9' }}>
+                {/* Right: Icon Block (formerly Image) */}
+                <div className="split-image" style={{ width: '20%', position: 'relative', overflow: 'hidden', background: '#f1f5f9' }}>
                     <motion.div
                         style={{ width: '100%', height: '100%', scale: imageScale }}
                     >
-                        {project.image ? (
-                            <img
-                                src={project.image}
-                                alt={project.title}
-                                style={{
-                                    width: '100%',
-                                    height: '100%',
-                                    objectFit: 'contain',
-                                    objectPosition: 'center'
-                                }}
-                            />
-                        ) : project.hasImage ? (
-                            <div style={{
-                                width: '100%',
-                                height: '100%',
-                                // Use white gradient for image overlay in light mode
-                                background: `linear-gradient(135deg, ${project.color}10, #ffffff)`,
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center'
-                            }}>
-                                <div style={{ textAlign: 'center', color: 'rgba(0,0,0,0.2)' }}>
-                                    <FaImage size={60} style={{ marginBottom: '1rem' }} />
-                                    <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem' }}>Preview</div>
-                                </div>
-                            </div>
-                        ) : (
-                            <div style={{
-                                width: '100%',
-                                height: '100%',
-                                background: `radial-gradient(circle at center, ${project.color}10, #e2e8f0)`,
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center'
-                            }}>
-                                <div style={{ opacity: 0.2, transform: 'scale(4)', color: project.color }}>{project.icon}</div>
-                            </div>
-                        )}
+                        <div style={{
+                            width: '100%',
+                            height: '100%',
+                            background: `radial-gradient(circle at center, ${project.color}10, #e2e8f0)`,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                        }}>
+                            <div style={{ opacity: 0.2, transform: 'scale(4)', color: project.color }}>{project.icon}</div>
+                        </div>
                     </motion.div>
                 </div>
 
